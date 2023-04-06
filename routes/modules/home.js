@@ -3,12 +3,12 @@ const router = express.Router()
 const URL = require('../../models/url')
 const shortened = require('../../models/shortened')
 
-// define homepage route
+// GET homepage
 router.get('/', (req, res) => {
   res.render('index')
 })
 
-// post new url
+// POST new url
 router.post('/submit', (req, res) => {
   const { url } = req.body
   URL.findOne({ url })
@@ -17,8 +17,9 @@ router.post('/submit', (req, res) => {
         console.log('exist')
         res.redirect('/')
       } else {
-        URL.create({ url, url_shortened: `http://localhost:3000/${shortened()}` })
-        res.redirect('/')
+        let url_end = shortened()
+        URL.create({ url, url_shortened: `http://localhost:3000/${url_end}` })
+        res.redirect(`/result/${url_end}`)
       }
     })
     .catch(error => console.log(error))
