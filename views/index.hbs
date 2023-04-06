@@ -1,5 +1,9 @@
-<div class="input-group mb-3">
-  <input type="text" class="form-control" placeholder="Input your website URL here" aria-label="Your website URL"
-    aria-describedby="button-addon">
-  <button class="btn btn-outline-secondary" type="button" id="button-addon">Convert</button>
-</div>
+<form action="/submit" method="POST" style="display: inline;">
+  <label for="url-input">Enter a URL:</label>
+  <div class="input-group mb-3">
+
+    <input type="text" class="form-control" placeholder="http://123.com" aria-label="Your website URL"
+      aria-describedby="button-addon" id="url-input" name="url">
+    <button class="btn btn-outline-secondary" type="button submit" id="button-addon">Convert</button>
+  </div>
+</form>
