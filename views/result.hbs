@@ -1,17 +1,27 @@
-<form action="" method="" style="display: inline;">
-  <label for="url-input">Enter a URL:</label>
+<!-- result page: original and shortened urls -->
+<form style="display: inline;">
+  <label>Enter a URL:</label>
   <div class="input-group mb-3">
-    <input type="text" class="form-control" placeholder="{{url.url}}" aria-label="Your website URL"
-      aria-describedby="button-addon" id="url-input" name="url" disabled readonly>
-    <button class="btn btn-outline-dark" type="button" id="button-addon" disabled>Convert</button>
+    <input type="text" class="form-control" placeholder="{{ url.url }}" aria-label="Your website URL"
+      aria-describedby="button-addon" disabled readonly>
+    <button class="btn btn-outline-dark" type="button" disabled>Convert</button>
   </div>
 </form>
 
-<form action="" method="" style="display: inline;">
-  <label for="url-result" style="color: rgb(13, 101, 178);">SUCCESS! Please use this link:</label>
+<form style="display: inline;">
+  <label style="color: rgb(13, 101, 178);">SUCCESS! Please use this link:</label>
   <div class="input-group mb-3">
-    <input type="text" class="form-control" value="{{url.url_shortened}}" aria-label="Shortened URL"
-      aria-describedby="button-addon" id="url-result">
-    <button class="btn btn-outline-secondary" type="button" id="button-addon">Copy</button>
+    <input type="text" class="form-control" value="{{ url.url_shortened }}" id="url-shortened"
+      aria-label="Shortened URL" aria-describedby="button-addon">
+    <button class="btn btn-outline-secondary copy" onclick="copy()">Copy</button>
   </div>
+  <!-- pop up alert when onclick copy btn -->
+  <script>
+    function copy() {
+      const URL = document.getElementById('url-shortened')
+      navigator.clipboard.writeText(URL.innerText)
+        .then(() => alert('Successfully copied!'))
+        .catch(error => console.log(error))
+    }
+  </script>
 </form>

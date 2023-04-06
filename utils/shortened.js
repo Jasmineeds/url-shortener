@@ -1,3 +1,4 @@
+// function: generate random five digits with lower, capital cases and numbers
 function shortened() {
   let result = '';
   const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
