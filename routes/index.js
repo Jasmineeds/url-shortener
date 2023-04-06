@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 const URL = require('../models/url')
 const PORT = process.env.PORT || 3000;
-const HOST = `http://localhost:${PORT}/`
+const HOST = `http://localhost:${PORT}`
 
 // js utils
 const randomID = require('../utils/randomID')
