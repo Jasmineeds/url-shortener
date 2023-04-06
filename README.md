@@ -10,14 +10,6 @@
 5. 使用者輸入同樣的網址，將會產生同樣的短網址
 6. 若沒有輸入 URL，則會顯示錯誤訊息
 
-## Prerequisites - 環境設置
-
-- Node.js
-- Express @4.16.4
-- Express-handlebars @3.0.0
-- Bootstrap @5.1.3
-- MongoDB
-- mongoose @5.9.7
 
 ## Installation and execution - 安裝與執行步驟
 
