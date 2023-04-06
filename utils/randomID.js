@@ -1,5 +1,5 @@
-// function: generate random five digits with lower, capital cases and numbers
-function shortened() {
+// function: generate random five lower or capital letters and numbers
+function randomID() {
   let result = '';
   const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
   const charactersLength = characters.length;
@@ -9,4 +9,4 @@ function shortened() {
   return result;
 }
 
-module.exports = shortened
+module.exports = randomID

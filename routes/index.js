@@ -1,10 +1,11 @@
 const express = require('express')
 const router = express.Router()
 const URL = require('../models/url')
-const host = 'http://localhost:3000'
+const PORT = process.env.PORT || 3000;
+const HOST = `http://localhost:${PORT}/`
 
 // js utils
-const shortened = require('../utils/shortened')
+const randomID = require('../utils/randomID')
 const id = require('../utils/id')
 
 // GET homepage
@@ -23,8 +24,8 @@ router.post('/submit', (req, res) => {
         // generate same shortened url if previously-input url detected
         res.redirect(`/result/${id(url_check.url_shortened)}`)
       } else {
-        let url_end = shortened()
-        URL.create({ url, url_shortened: `${host}/${url_end}` })
+        let url_end = randomID()
+        URL.create({ url, url_shortened: `${HOST}/${url_end}` })
         res.redirect(`/result/${url_end}`)
       }
     })
